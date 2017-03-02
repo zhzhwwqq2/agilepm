@@ -1,3 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 .DS_Store
+frontend/dashboard.html
+frontend/images/
+frontend/index.html
