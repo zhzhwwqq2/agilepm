@@ -5,56 +5,46 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        front:['./js-src/index.js'],
-        dashboard:['./js-src/main.js']
+        front:['./src/index.js'],
+        dashboard:['./src/main.js']
     },
-    output: { path: __dirname+"/js", filename: '[name].js', publicPath:"/js/" },
+    output: { path: __dirname+"/dist", filename: 'js/[name].js', publicPath:"/" },
     module: {
-        loaders: [{
+        rules: [{
             test: /\.js?$/,
             exclude: /node_modules/,
-            loader: 'babel'
+            use: [{ loader: 'babel-loader' }],
         }, {
             test: /\.less$/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
+            use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader', 'less-loader'] }),
         }, {
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+            use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' }),
         }, {
             test: /\.(jpg|png|gif)$/,
-            loader: "file?name=images/[name].[ext]"
-        },{
+            use: ['file-loader?name=images/[name].[ext]'],
+        }, {
             test: /\.(eot|woff|woff2|ttf|svg)$/,
-            loader: "file?name=fonts/[name].[ext]"
-        }]
+            use: ['file-loader?name=fonts/[name].[ext]'],
+        }],
     },
     plugins: [
-        new webpack.DefinePlugin({
-            "process.env": {
-                // NODE_ENV: JSON.stringify("development")
-                NODE_ENV: JSON.stringify("production")
-            }
-        }),
-        new ExtractTextPlugin("../css/[id].css"),
-        // new CleanWebpackPlugin(['*.js', '*.map'], {
-        //     root: path.join(__dirname,"/js"),
-        //     verbose: true,
-        //     dry: false
-        // }),
+        new ExtractTextPlugin({ filename: 'css/[id].css' }),
         new HtmlWebpackPlugin({
             chunks:['front'],
-            filename:'../index.html',
+            filename:'index.html',
             template: path.join(__dirname,"/index-tmpl.html")
         }),
         new HtmlWebpackPlugin({
             chunks:['dashboard'],
-            filename:'../dashboard.html',
+            filename:'dashboard.html',
             template: path.join(__dirname,"/dashboard-tmpl.html")
         }),
+        new CopyWebpackPlugin([{ from: 'lib/*', to: './' }]),
     ],
     externals: { //全局引用
     },
