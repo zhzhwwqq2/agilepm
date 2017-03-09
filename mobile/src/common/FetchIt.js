@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import { message } from 'antd';
 import common from './common';
 
 export default class Fetch{
@@ -20,7 +19,6 @@ export default class Fetch{
                 throw new Error(result.msg);
             }
         }).catch(function (error) {
-            message.error(error.message);
             if(failed){
                 failed(error);
             }

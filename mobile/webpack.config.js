@@ -9,8 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: {
-        front:['./src/index.js'],
-        dashboard:['./src/main.js']
+        mobile:['./src/index.js'],
     },
     output: { path: __dirname+"/dist", filename: 'js/[name].js', publicPath:"/" },
     module: {
@@ -32,17 +31,16 @@ module.exports = {
             use: ['file-loader?name=fonts/[name].[ext]'],
         }],
     },
+	resolve: {
+       modules: ['node_modules', path.join(__dirname, '../node_modules')],
+       extensions: ['.web.js', '.js', '.json'],
+    },
     plugins: [
         new ExtractTextPlugin({ filename: 'css/[id].css' }),
         new HtmlWebpackPlugin({
-            chunks:['front'],
+            chunks:['mobile'],
             filename:'index.html',
             template: path.join(__dirname,"/index-tmpl.html")
-        }),
-        new HtmlWebpackPlugin({
-            chunks:['dashboard'],
-            filename:'dashboard.html',
-            template: path.join(__dirname,"/dashboard-tmpl.html")
         }),
         new CopyWebpackPlugin([{ from: 'lib/*', to: './' }]),
     ],

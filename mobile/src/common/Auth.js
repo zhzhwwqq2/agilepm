@@ -2,7 +2,6 @@
  * Created by sunlong on 16/8/3.
  */
 import {browserHistory} from "react-router";
-import "antd/lib/message/style/index.css";
 
 var Base64 = require('js-base64').Base64;
 

@@ -4,5 +4,5 @@
     "react",
     "stage-0"
   ],
-  "plugins": ["transform-object-rest-spread", "antd"]
+  "plugins": ["transform-object-rest-spread", ["import", { "style": "css", "libraryName": "antd-mobile" }]]
 }
