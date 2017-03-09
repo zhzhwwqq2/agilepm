@@ -1,0 +1,15 @@
+html{font-size: 12px !important;}
+
+.tableDetail, .tableDetail td, .tableDetail th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.ant-table .tableDetail {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tableDetail td, .tableDetail th {
+    padding: 15px;
+}
