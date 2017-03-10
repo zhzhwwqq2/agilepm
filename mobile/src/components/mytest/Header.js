@@ -17,8 +17,7 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <Flex className="flex-container">
-         <Flex>
+         <Flex justify="center">
             <Flex.Item>
                 <HeaderPic/>
                 <div className="header-rank"><span>学习排名：100</span></div>
@@ -29,7 +28,6 @@ export default class Header extends React.Component {
                 <Button type="primary" inline size="small">inline small</Button>
             </Flex.Item>
          </Flex>
-      </Flex>
     );
   }
 }
