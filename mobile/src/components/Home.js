@@ -3,7 +3,6 @@
  */
 import React from "react";
 import { Link } from 'react-router'
-import "./home.less";
 import AppBottom from './appBottom'
 
 export default class Home extends React.Component {
@@ -18,7 +17,6 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-          这个是个例子
           <AppBottom/>
       </div>
 

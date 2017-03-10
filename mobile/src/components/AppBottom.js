@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Link } from 'react-router'
 import { TabBar, Icon } from 'antd-mobile';
-import "./appBottom.less";
+
 
 export default class AppBottom extends React.Component {
   constructor(props) {
@@ -13,20 +14,30 @@ export default class AppBottom extends React.Component {
   }
 
   renderContent(pageText) {
-    return (
-      <div style={{ backgroundColor: 'white', height: '100%', textAlign: 'center' }}>
-        <div style={{ paddingTop: 60 }}>你已点击“{pageText}” tab， 当前展示“{pageText}”信息</div>
-        <a style={{ display: 'block', marginTop: 40, marginBottom: 600, color: '#108ee9' }} onClick={(e) => {
-          e.preventDefault();
-          this.setState({
-            hidden: !this.state.hidden,
-          });
-        }}
-        >
-          点击切换 tab-bar 显示/隐藏
-        </a>
-      </div>
-    );
+      switch (pageText) {
+          case "我的练习":
+              return (
+                  <Link to="/mytest"></Link>
+              );
+              break;
+          case "练习室":
+              return (
+
+                  <Link to="/index.html"></Link>
+              );
+              break;
+          case "学分商城":
+              return (
+
+                  <Link to="/index.html"></Link>
+              );
+          default:
+              return (
+
+                  <Link to="/index.html"></Link>
+              );
+      }
+
   }
 
   render() {
@@ -41,20 +52,9 @@ export default class AppBottom extends React.Component {
         <TabBar.Item
           title="我的练习"
           key="我的练习"
-          icon={<div style={{
-            width: '0.44rem',
-            height: '0.44rem',
-            }}
-          />
-          }
-          selectedIcon={<div style={{
-            width: '0.44rem',
-            height: '0.44rem',
-            }}
-          />
-          }
+          icon={""}
+          selectedIcon={""}
           selected={this.state.selectedTab === 'blueTab'}
-          badge={1}
           onPress={() => {
             this.setState({
               selectedTab: 'blueTab',
@@ -65,11 +65,10 @@ export default class AppBottom extends React.Component {
           {this.renderContent('我的练习')}
         </TabBar.Item>
         <TabBar.Item
-          icon={<Icon type="koubei-o" size="md" />}
-          selectedIcon={<Icon type="koubei" size="md" />}
+          icon={""}
+          selectedIcon={""}
           title="练习室"
           key="练习室"
-          badge={'new'}
           selected={this.state.selectedTab === 'redTab'}
           onPress={() => {
             this.setState({
@@ -81,23 +80,10 @@ export default class AppBottom extends React.Component {
           {this.renderContent('练习室')}
         </TabBar.Item>
         <TabBar.Item
-          icon={
-            <div style={{
-              width: '0.44rem',
-              height: '0.44rem',
-              }}
-            />
-          }
-          selectedIcon={
-            <div style={{
-              width: '0.44rem',
-              height: '0.44rem',
-              }}
-            />
-          }
+          icon={""}
+          selectedIcon={""}
           title="学分商城"
           key="学分商城"
-          dot
           selected={this.state.selectedTab === 'greenTab'}
           onPress={() => {
             this.setState({
