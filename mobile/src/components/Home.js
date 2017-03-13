@@ -3,7 +3,7 @@
  */
 import React from "react";
 import { Link } from 'react-router'
-import AppBottom from './appBottom'
+import AppBottom from './common/appBottom'
 
 export default class Home extends React.Component {
   static propTypes = {

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
-import AppBottom from './components/AppBottom';
+import AppBottom from './components/common/AppBottom';
 import MyTest from './components/mytest/MyTest';
 import store from './store';
 

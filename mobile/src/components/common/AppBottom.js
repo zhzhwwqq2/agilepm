@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Link } from 'react-router'
 import { TabBar, Icon } from 'antd-mobile';
 
-
 export default class AppBottom extends React.Component {
   constructor(props) {
     super(props);
@@ -52,8 +51,8 @@ export default class AppBottom extends React.Component {
         <TabBar.Item
           title="我的练习"
           key="我的练习"
-          icon={""}
-          selectedIcon={""}
+          icon={<Icon type={require('svg-sprite-loader!./svg/02.svg')}  size="md" color="blue" />}
+          selectedIcon={require("./images/mytest_active.png")}
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => {
             this.setState({
@@ -65,8 +64,8 @@ export default class AppBottom extends React.Component {
           {this.renderContent('我的练习')}
         </TabBar.Item>
         <TabBar.Item
-          icon={""}
-          selectedIcon={""}
+          icon={require("./images/classroom_normal.png")}
+          selectedIcon={require("./images/classroom_active.png")}
           title="练习室"
           key="练习室"
           selected={this.state.selectedTab === 'redTab'}
@@ -80,8 +79,8 @@ export default class AppBottom extends React.Component {
           {this.renderContent('练习室')}
         </TabBar.Item>
         <TabBar.Item
-          icon={""}
-          selectedIcon={""}
+          icon={require("./images/shop_normal.png")}
+          selectedIcon={require("./images/shop_active.png")}
           title="学分商城"
           key="学分商城"
           selected={this.state.selectedTab === 'greenTab'}
