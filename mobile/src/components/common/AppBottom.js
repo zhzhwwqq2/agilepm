@@ -51,7 +51,7 @@ export default class AppBottom extends React.Component {
         <TabBar.Item
           title="我的练习"
           key="我的练习"
-          icon={<Icon type={require('svg-sprite-loader!./svg/02.svg')}  size="md" color="blue" />}
+          icon={<Icon type={require('!svg-sprite-loader!./svg/mytest_normal.svg')}  size="md" color="blue" />}
           selectedIcon={require("./images/mytest_active.png")}
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => {
