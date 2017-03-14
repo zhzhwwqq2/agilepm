@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './header'
+import {TextareaItemExampleWrapper} from './TextareaExample'
 
 export default class MyTest extends React.Component {
   static propTypes = {
@@ -15,6 +16,7 @@ export default class MyTest extends React.Component {
     return (
       <div>
           <Header/>
+          <TextareaItemExampleWrapper/>
       </div>
     );
   }
