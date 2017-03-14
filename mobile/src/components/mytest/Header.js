@@ -5,12 +5,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Flex, List, Button} from 'antd-mobile';
 import HeaderPic from './HeaderPic'
+import Fetch from '../../common/FetchIt';
 
 export default class Header extends React.Component {
   static propTypes = {
     name: React.PropTypes.string,
   };
 
+   loadData() {
+        Fetch.get("http://192.168.1.103:3000/posts/1").then(id =>console.log("ddd",id));
+
+    }
+    componentDidMount() {
+        this.loadData();
+    }
   constructor(props) {
     super(props);
   }
