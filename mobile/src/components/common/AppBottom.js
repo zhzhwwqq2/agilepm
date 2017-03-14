@@ -44,15 +44,15 @@ export default class AppBottom extends React.Component {
         <div id="tab-bar" className="demo">
       <TabBar
         unselectedTintColor="#949494"
-        tintColor="#33A3F4"
+        tintColor="#F6B507"
         barTintColor="white"
         hidden={this.state.hidden}
       >
         <TabBar.Item
           title="我的练习"
           key="我的练习"
-          icon={<Icon type={require('!svg-sprite-loader!./svg/mytest_normal.svg')}  size="md" color="blue" />}
-          selectedIcon={require("./images/mytest_active.png")}
+          icon={<Icon type={require('!svg-sprite-loader!./svg/mytest_normal.svg')}  size="md" />}
+          selectedIcon={<Icon type={require('!svg-sprite-loader!./svg/mytest_active.svg')} size="md"/>}
           selected={this.state.selectedTab === 'blueTab'}
           onPress={() => {
             this.setState({
@@ -64,8 +64,8 @@ export default class AppBottom extends React.Component {
           {this.renderContent('我的练习')}
         </TabBar.Item>
         <TabBar.Item
-          icon={require("./images/classroom_normal.png")}
-          selectedIcon={require("./images/classroom_active.png")}
+          icon={<Icon type={require('!svg-sprite-loader!./svg/classroom_normal.svg')}  size="md" />}
+          selectedIcon={<Icon type={require('!svg-sprite-loader!./svg/classroom_active.svg')}  size="md" />}
           title="练习室"
           key="练习室"
           selected={this.state.selectedTab === 'redTab'}
@@ -79,8 +79,8 @@ export default class AppBottom extends React.Component {
           {this.renderContent('练习室')}
         </TabBar.Item>
         <TabBar.Item
-          icon={require("./images/shop_normal.png")}
-          selectedIcon={require("./images/shop_active.png")}
+          icon={<Icon type={require('!svg-sprite-loader!./svg/shop_normal.svg')}  size="md" />}
+          selectedIcon={<Icon type={require('!svg-sprite-loader!./svg/shop_active.svg')}  size="md" />}
           title="学分商城"
           key="学分商城"
           selected={this.state.selectedTab === 'greenTab'}
