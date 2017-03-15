@@ -17,7 +17,7 @@ export default class Header extends React.Component {
 
     }
     componentDidMount() {
-        this.loadData();
+        // this.loadData();
     }
   constructor(props) {
     super(props);
