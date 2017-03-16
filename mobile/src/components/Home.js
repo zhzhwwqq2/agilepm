@@ -1,25 +1,16 @@
 /**
  * Created by sunlong on 16/8/13.
  */
-import React from "react";
-import { Link } from 'react-router'
-import AppBottom from './common/appBottom'
+import React from 'react';
+import AppBottom from './common/appBottom';
 
 export default class Home extends React.Component {
-  static propTypes = {
-    name: React.PropTypes.string,
-  };
+    render() {
+        return (
+            <div>
+                <AppBottom />
+            </div>
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-          <AppBottom/>
-      </div>
-
-    );
-  }
+        );
+    }
 }

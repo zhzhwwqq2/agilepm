@@ -2,8 +2,7 @@
  * Created by samurai on 2017/3/14.
  */
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { List, TextareaItem, WhiteSpace } from 'antd-mobile';
+import { List, TextareaItem } from 'antd-mobile';
 import { createForm } from 'rc-form';
 
 class TestTextareaItem extends React.Component {

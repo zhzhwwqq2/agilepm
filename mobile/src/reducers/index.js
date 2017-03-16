@@ -1,7 +1,7 @@
-import { combineReducers } from 'redux'
+import { combineReducers } from 'redux';
 
 
-var reducers = combineReducers({
+const reducers = combineReducers({
 
 });
 
