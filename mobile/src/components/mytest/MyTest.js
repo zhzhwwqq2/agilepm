@@ -106,7 +106,6 @@ export default class MyTest extends React.Component {
                     <ImagePicker
                         files={files}
                         onChange={this.onChange}
-                        onImageClick={(index, fs) => console.log(index, fs)}
                         selectable={files.length < 5}
                     />
                 </div>
